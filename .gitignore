@@ -1,1 +1,363 @@
 ers-venv
+# ============================================================================
+# Enterprise RAG System .gitignore
+# ============================================================================
+
+# ============================================================================
+# CRITICAL: Never commit these files (Security)
+# ============================================================================
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+secrets/
+credentials/
+
+# ============================================================================
+# Python
+# ============================================================================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# pdm
+.pdm.toml
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# ============================================================================
+# IDEs and Editors
+# ============================================================================
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.vim/
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# Eclipse
+.project
+.pydevproject
+.settings/
+
+# JetBrains
+.idea/
+*.iml
+
+# ============================================================================
+# Operating System
+# ============================================================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+.directory
+.Trash-*
+
+# ============================================================================
+# Application Specific
+# ============================================================================
+# Data directories
+data/
+!data/.gitkeep
+uploads/
+downloads/
+tmp/
+temp/
+
+# ChromaDB persistence
+*.chroma/
+chroma_data/
+data/chroma/
+*.db
+*.sqlite
+*.sqlite3
+
+# Vector database files
+*.index
+*.faiss
+embeddings/
+
+# Logs
+logs/
+*.log
+*.log.*
+log/
+
+# Cache
+.cache/
+*.cache
+cache/
+
+# Redis dumps
+dump.rdb
+appendonly.aof
+
+# PostgreSQL
+*.sql
+*.dump
+
+# ============================================================================
+# Docker
+# ============================================================================
+docker-compose.override.yml
+.dockerignore
+
+# ============================================================================
+# Monitoring & Metrics
+# ============================================================================
+prometheus_data/
+grafana_data/
+*.prom
+
+# ============================================================================
+# Documentation
+# ============================================================================
+docs/_build/
+docs/.doctrees/
+site/
+
+# ============================================================================
+# Backup files
+# ============================================================================
+*.bak
+*.backup
+*.old
+*.orig
+*.tmp
+*~
+
+# ============================================================================
+# Large files / Media
+# ============================================================================
+*.pdf
+*.docx
+*.pptx
+*.xlsx
+*.csv
+# Exception: Keep example files
+!example.pdf
+!test_document.txt
+!sample_data.csv
+
+# ============================================================================
+# Model files (if you download any)
+# ============================================================================
+models/
+*.pt
+*.pth
+*.bin
+*.onnx
+*.h5
+*.pkl
+*.pickle
+
+# ============================================================================
+# API Keys and Tokens (Additional Safety)
+# ============================================================================
+*_key.txt
+*_token.txt
+*_secret.txt
+config/secrets.yaml
+config/local.yaml
+
+# ============================================================================
+# Build artifacts
+# ============================================================================
+*.whl
+*.tar.gz
+*.zip
+
+# ============================================================================
+# Testing
+# ============================================================================
+.tox/
+.coverage
+htmlcov/
+.pytest_cache/
+test-results/
+test-output/
+
+# ============================================================================
+# Misc
+# ============================================================================
+.ruff_cache/
+.mypy_cache/
+.pytype/
+*.pyc
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ============================================================================
+# Keep these files (whitelist)
+# ============================================================================
+!.gitkeep
+!README.md
+!LICENSE
+!CONTRIBUTING.md
+!.env.example
+!config/settings.example.yaml

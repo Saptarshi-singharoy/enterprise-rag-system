@@ -4,10 +4,10 @@ from fastapi.responses import JSONResponse
 from contextlib import asynccontextmanager
 import time
 
-from .routes import router
-from ..core.config import get_settings
-from ..core.logging import setup_logging, get_logger
-from ..core.exceptions import RAGSystemException
+from src.api.routes import router
+from src.core.config import get_settings
+from src.core.logging import setup_logging, get_logger
+from src.core.exceptions import RAGSystemException
 
 settings = get_settings()
 logger = get_logger(__name__)

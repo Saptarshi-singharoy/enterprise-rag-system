@@ -12,8 +12,8 @@ __version__ = "1.0.0"
 __author__ = "Enterprise AI Team"
 __license__ = "MIT"
 
-from .core.config import get_settings
-from .core.logging import setup_logging, get_logger
+from .config import get_settings, Settings
+from .logging import setup_logging, get_logger
 
 # Initialize logging on package import
 settings = get_settings()

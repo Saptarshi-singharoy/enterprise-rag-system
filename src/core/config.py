@@ -19,14 +19,14 @@ class Settings(BaseSettings):
     
     # OpenAI
     OPENAI_API_KEY: str
-    OPENAI_MODEL: str = "gpt-4-turbo-preview"
+    OPENAI_MODEL: Optional[str] = "gpt-5-nano"
     OPENAI_EMBEDDING_MODEL: str = "text-embedding-3-large"
     OPENAI_TEMPERATURE: float = 0.1
     OPENAI_MAX_TOKENS: int = 2000
     
     # Vector Database
-    VECTOR_DB_TYPE: str = "chromadb"  # chromadb, pinecone, qdrant
-    CHROMA_PERSIST_DIR: str = "./data/chroma"
+    VECTOR_DB_TYPE: Optional[str] = "chromadb"  # chromadb, pinecone, qdrant
+    CHROMA_PERSIST_DIR: Optional[str] = "./data/chroma"
     PINECONE_API_KEY: Optional[str] = None
     PINECONE_ENVIRONMENT: Optional[str] = None
     PINECONE_INDEX: Optional[str] = None
@@ -54,7 +54,7 @@ class Settings(BaseSettings):
     RATE_LIMIT_PER_HOUR: int = 1000
     
     # Security
-    SECRET_KEY: str
+    SECRET_KEY: Optional[str]
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     ALLOWED_ORIGINS: List[str] = ["*"]
     

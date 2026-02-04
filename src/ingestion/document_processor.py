@@ -25,7 +25,7 @@ class DocumentProcessor:
     def __init__(self):
         self.text_splitter = RecursiveCharacterTextSplitter(
             chunk_size=settings.CHUNK_SIZE,
-            chunnk_overlap=settings.CHUNK_OVERLAP,
+            chunk_overlap=settings.CHUNK_OVERLAP,
             length_function=len,
             separators=["\n\n","\n", ". ", " ", ""]
         )
