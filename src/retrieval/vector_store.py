@@ -3,6 +3,7 @@ from abc import ABC, abstractmethod
 
 from langchain_classic.schema import Document
 from langchain_community.vectorstores import Chroma
+from langchain_community.vectorstores.utils import filter_complex_metadata
 from langchain_openai import OpenAIEmbeddings
 
 from ..core.config import get_settings
@@ -58,7 +59,8 @@ class ChromaVectorStore(VectorStore):
     async def add_documents(self, documents: List[Document]) -> List[str]:
         """Add documents to ChromaDB"""
         try:
-            ids = self.store.aadd_documents(documents)
+            filtered_docs = filter_complex_metadata(documents)
+            ids = await self.store.aadd_documents(filtered_docs)
             logger.info(f"Added {len(documents)} documents to vector store")
             return ids
         except Exception as e:

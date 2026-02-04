@@ -1,7 +1,7 @@
 from typing import List, Dict, Any, Optional
 from langchain_openai import ChatOpenAI
-from langchain_classic.prompts import PromptTemplate
-from langchain_classic.schema import Document
+from langchain_core.prompts import PromptTemplate
+from langchain_core.documents import Document
 
 from ..core.config import get_settings
 from ..core.logging import get_logger
@@ -16,8 +16,8 @@ class RAGChain:
     def __init__(self):
         self.llm = ChatOpenAI(
             model=settings.OPENAI_MODEL,
-            temperature=settings.OPENAI_TEMPERATURE,
-            max_completion_tokens=settings.OPENAI_MAX_TOKENS,
+            # temperature=settings.OPENAI_TEMPERATURE,
+            # max_completion_tokens=settings.OPENAI_MAX_TOKENS,
             openai_api_key=settings.OPENAI_API_KEY
         )
 
@@ -66,11 +66,13 @@ class RAGChain:
 
             # Generate Response
             prompt = self.prompt_template.format(
-                context,
+                context=context,
                 question=query
             )
 
-            response = await self.llm.invoke(prompt)
+            response = self.llm.invoke(prompt)
+
+            logger.info(f"RESPONSE: {response}")
             answer = response.content
 
             # Build response object

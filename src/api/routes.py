@@ -56,7 +56,7 @@ async def query_documents(request: QueryRequest):
         context_docs = await vector_store.similarity_search(
             query=request.query,
             k=request.top_k,
-            filter=request.filters
+            filter=request.filters or None
         )
 
         if not context_docs:
@@ -134,7 +134,7 @@ async def upload_document(
 
         # Process Document
         custom_metadata = eval(metadata) if metadata else {}
-        chunks = await doc_processor.process_document(
+        chunks = doc_processor.process_document(
             tmp_path, custom_metadata
         )
 
